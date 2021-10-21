@@ -82,6 +82,9 @@ int main()
 
   // 여기서 코드를 끝마칠 경우 window가 생성후 바로 닫히게 됨
 
+  // 밑에서 Escape 키가 눌러지는 것을 감지할 수 있도록 할 것
+  glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+
   // ==== 삼각형 만들기 ====
 
   // Window를 만들고 난 후 다음 코드를 입력
@@ -113,20 +116,12 @@ int main()
   // 우리의 버텍스들을 OpenGL로 넘겨줍니다.
   glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
 
-  // ==== 삼각형 만들기 끝 ====
-
-  // 밑에서 Escape 키가 눌러지는 것을 감지할 수 있도록 할 것
-  glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-
   do
   {
-
-    // === 삼각형 그리기 ===
 
     // 버퍼의 첫번째 속성값(attribute) : 버텍스들
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void *)0);
 
     // 삼각형 그리기
@@ -134,11 +129,11 @@ int main()
     glDrawArrays(GL_TRIANGLES, 0, 3);
     glDisableVertexAttribArray(0);
 
-    // === 삼각형 그리기 끝 ===
+    // === 삼각형 만들기 끝 ===
 
     // 버퍼들을 교체
-    glfwSwapBuffers(window);
     glfwPollEvents();
+    glfwSwapBuffers(window);
 
   } // 만약 ESC 키가 눌러졌는지 혹은 창이 닫혔는지 체크 체크
   while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&

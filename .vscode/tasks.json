@@ -17,9 +17,10 @@
         "-lgdi32",
         "-lopengl32",
         "${file}",
+        "..\\lib\\glad.c",
         "C:\\msys64\\mingw64\\lib\\*.a",
         "-o",
-        "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+        "${fileDirname}\\..\\build\\${fileBasenameNoExtension}.exe",
         "-mwindows"
       ],
       "options": {

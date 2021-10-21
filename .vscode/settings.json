@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.jsp": "jsp",
+    "*.tcc": "cpp"
+  }
+}
