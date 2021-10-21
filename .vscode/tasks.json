@@ -3,7 +3,7 @@
   "tasks": [
     {
       "type": "cppbuild",
-      "label": "C/C++: g++.exe 활성 파일 빌드",
+      "label": "Build : OpenGL",
       "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
       "args": [
         "-IC:\\msys64\\mingw64\\include",
