@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "C/C++: g++.exe 활성 파일 빌드",
+      "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-IC:\\msys64\\mingw64\\include",
+        "-LC:\\msys64\\mingw64\\lib",
+        "-lfreeglut",
+        "-lglew32",
+        "-lglu32",
+        "-luser32",
+        "-lkernel32",
+        "-lglfw3",
+        "-lgdi32",
+        "-lopengl32",
+        "${file}",
+        "C:\\msys64\\mingw64\\lib\\*.a",
+        "-o",
+        "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+        "-mwindows"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "컴파일러: C:\\msys64\\mingw64\\bin\\g++.exe"
+    }
+  ]
+}
